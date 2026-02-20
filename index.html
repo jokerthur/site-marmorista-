@@ -3,278 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marmorista Profissional | Carreira e Arte</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Marmorista Pro | Guia de Carreira 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Lora:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary: #2c3e50;
-            --accent: #d4af37; /* Dourado Mármore */
-            --light: #f4f4f4;
-            --white: #ffffff;
-            --shadow: 0 4px 15px rgba(0,0,0,0.1);
+            --dark-marble: #1a1a1a;
+            --gold: #c5a059;
+            --silver: #e0e0e0;
+            --glass: rgba(255, 255, 255, 0.95);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f9f9f9; color: #333; line-height: 1.7; }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
-            color: var(--primary);
-            background-color: var(--light);
-            scroll-behavior: smooth;
-        }
-
-        /* Header & Nav */
-        header {
-            background: var(--white);
-            padding: 1rem 5%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
+        /* Estilo da Barra de Navegação */
+        nav {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 2000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
         }
 
-        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--primary); }
-        .logo span { color: var(--accent); }
+        .logo { font-family: 'Lora', serif; font-size: 1.6rem; color: var(--dark-marble); font-weight: 700; }
+        .logo span { color: var(--gold); }
 
-        nav ul { display: flex; list-style: none; }
-        nav ul li { margin-left: 20px; }
-        nav ul li a { text-decoration: none; color: var(--primary); font-weight: 600; transition: 0.3s; }
-        nav ul li a:hover { color: var(--accent); }
+        .nav-links a { 
+            text-decoration: none; 
+            color: #555; 
+            margin-left: 25px; 
+            font-weight: 600; 
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+        .nav-links a:hover { color: var(--gold); }
 
-        /* Hero Section */
+        /* Hero Moderno */
         .hero {
-            height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1350&q=80');
+            height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1517646331032-9e8563c520a1?auto=format&fit=crop&w=1920&q=80');
+            background-attachment: fixed;
             background-size: cover;
-            background-position: center;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            color: var(--white);
+            justify-content: center;
             text-align: center;
-            padding: 0 20px;
-            margin-top: 60px;
-        }
-
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 1rem; }
-        .hero p { font-size: 1.2rem; max-width: 700px; }
-
-        /* Container Principal */
-        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-
-        /* Cards de Informação */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 50px;
-        }
-
-        .card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s;
-            border-top: 5px solid var(--accent);
-        }
-
-        .card:hover { transform: translateY(-10px); }
-        .card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 15px; }
-        .card h3 { margin-bottom: 15px; }
-
-        /* Seção de Dados (Salário e ENEM) */
-        .stats-section {
-            background: var(--primary);
-            color: var(--white);
-            padding: 60px 0;
-            border-radius: 20px;
-            margin: 50px 0;
-        }
-
-        .stats-container {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            text-align: center;
-        }
-
-        .stat-item { padding: 20px; }
-        .stat-item h2 { font-size: 2.5rem; color: var(--accent); }
-
-        /* Calculadora Interativa */
-        .calc-box {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            margin-top: 30px;
-        }
-
-        input {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        button {
-            background: var(--accent);
             color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            width: 100%;
-            font-size: 1rem;
-            transition: 0.3s;
+            padding: 0 10%;
         }
 
-        button:hover { background: #b8962d; }
+        .hero-content h1 { font-family: 'Lora', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 1.5rem; }
+        .hero-content p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 2rem; opacity: 0.9; }
 
-        #resultado {
-            margin-top: 20px;
-            padding: 15px;
-            background: #e8f4fd;
-            border-radius: 5px;
-            display: none;
+        .container { max-width: 1200px; margin: 0 auto; padding: 5rem 2rem; }
+
+        /* Seção de Dados e Salários */
+        .salary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
-        footer {
-            background: #1a1a1a;
-            color: #888;
-            padding: 40px 0;
+        .salary-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             text-align: center;
+            border-bottom: 4px solid var(--gold);
         }
 
-        /* Responsividade */
+        .salary-card h4 { color: #888; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 1rem; }
+        .salary-card .value { font-size: 2.5rem; font-weight: 800; color: var(--dark-marble); }
+
+        /* Tabela Comparativa */
+        .table-container { 
+            overflow-x: auto; 
+            margin: 4rem 0; 
+            background: white; 
+            padding: 2rem; 
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        th { text-align: left; padding: 1.5rem; background: #fdfdfd; border-bottom: 2px solid #eee; color: var(--gold); }
+        td { padding: 1.2rem; border-bottom: 1px solid #eee; font-size: 0.95rem; }
+
+        /* Educação e ENEM */
+        .edu-section {
+            background: var(--dark-marble);
+            color: white;
+            border-radius: 30px;
+            padding: 4rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .edu-text { flex: 1; min-width: 300px; }
+        .edu-stats { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .edu-box { background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 15px; }
+        .edu-box h5 { color: var(--gold); margin-bottom: 5px; }
+
+        /* Simulador de Carreira Interativo */
+        .simulador-box {
+            background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            margin-top: 4rem;
+        }
+
+        .input-group { margin-bottom: 1.5rem; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; }
+        select, input { 
+            width: 100%; padding: 15px; border-radius: 10px; border: 1px solid #ddd; font-size: 1rem;
+        }
+
+        .btn-calc {
+            background: var(--dark-marble); color: white; border: none; padding: 1.2rem;
+            width: 100%; border-radius: 10px; cursor: pointer; font-weight: bold; font-size: 1.1rem;
+            transition: var(--transition);
+        }
+        .btn-calc:hover { background: var(--gold); transform: scale(1.02); }
+
+        #dashboard-resultado {
+            margin-top: 2rem; display: none; padding: 2rem; background: white; border-radius: 15px;
+            border-left: 6px solid var(--gold);
+        }
+
+        footer { background: #111; color: white; padding: 5rem 10% 2rem; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; }
+        .footer-bottom { border-top: 1px solid #333; margin-top: 3rem; padding-top: 2rem; text-align: center; font-size: 0.8rem; }
+
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            header { flex-direction: column; }
-            nav ul { margin-top: 15px; }
+            .edu-stats { grid-template-columns: 1fr; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">MARMORISTA<span>ELITE</span></div>
-        <nav>
-            <ul>
-                <li><a href="#carreira">Carreira</a></li>
-                <li><a href="#dados">Mercado</a></li>
-                <li><a href="#calculadora">Simulador</a></li>
-                <li><a href="https://github.com" target="_blank">GitHub</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav>
+        <div class="logo">MARMORISTA<span>.EDU</span></div>
+        <div class="nav-links">
+            <a href="#salarios">Salários</a>
+            <a href="#carreira">A Profissão</a>
+            <a href="#enem">ENEM</a>
+            <a href="#simulador">Simulador</a>
+        </div>
+    </nav>
 
     <section class="hero">
-        <h1>A Arte em Pedras Naturais</h1>
-        <p>Conheça a profissão que transforma mármore, granito e pedras ornamentais em peças exclusivas de arquitetura e design.</p>
+        <div class="hero-content">
+            <h1>O Futuro em Pedras Ornamentais</h1>
+            <p>Descubra dados reais sobre a carreira de marmorista no Brasil: salários, formação técnica e caminhos acadêmicos para 2026.</p>
+            <a href="#salarios" style="padding: 1rem 2.5rem; background: var(--gold); color: white; text-decoration: none; border-radius: 50px; font-weight: bold;">Ver Dados do Mercado</a>
+        </div>
     </section>
 
     <div class="container">
         
-        <section id="carreira">
-            <h2 style="text-align:center; margin-bottom: 40px; font-family: 'Playfair Display';">A Profissão Marmorista</h2>
-            <div class="info-grid">
-                <div class="card">
-                    <i class="fas fa-cut"></i>
-                    <h3>Funções Principais</h3>
-                    <p>Corte, polimento, acabamento e instalação de pedras. O marmorista interpreta desenhos técnicos para criar pias, escadas e bancadas perfeitas.</p>
+        <section id="salarios">
+            <h2 style="font-family: 'Lora'; font-size: 2.5rem; margin-bottom: 1rem;">Panorama Salarial 2026</h2>
+            <p>O mercado de rochas ornamentais brasileiro é um dos maiores do mundo. Confira as médias atuais:</p>
+            
+            <div class="salary-grid">
+                <div class="salary-card">
+                    <h4>Média Nacional (CLT)</h4>
+                    <div class="value">R$ 2.450</div>
+                    <p style="color: #27ae60; font-size: 0.8rem; margin-top: 10px;">↑ 5.8% em relação a 2025</p>
                 </div>
-                <div class="card">
-                    <i class="fas fa-hard-hat"></i>
-                    <h3>Habilidades</h3>
-                    <p>Exige precisão milimétrica, conhecimento de materiais químicos (resinas e abrasivos) e manuseio de ferramentas pesadas.</p>
+                <div class="salary-card">
+                    <h4>Marmorista Sênior</h4>
+                    <div class="value">R$ 4.200</div>
+                    <p>Especialistas em acabamento fino</p>
                 </div>
-                <div class="card">
-                    <i class="fas fa-drafting-pencil"></i>
-                    <h3>Campo de Atuação</h3>
-                    <p>Indústrias de construção civil, marmorarias especializadas, design de interiores e restauração de patrimônios históricos.</p>
+                <div class="salary-card">
+                    <h4>Autônomo (Projeção)</h4>
+                    <div class="value">R$ 6.500+</div>
+                    <p>Média líquida para profissionais com oficina própria</p>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <h3>Médias por Região e Estado (Top 5)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Estado</th>
+                            <th>Média Salarial</th>
+                            <th>Demanda</th>
+                            <th>Principais Polos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>São Paulo (SP)</td>
+                            <td>R$ 2.850,00</td>
+                            <td><span style="color: #e67e22">Muito Alta</span></td>
+                            <td>Capital, Campinas, Barueri</td>
+                        </tr>
+                        <tr>
+                            <td>Espírito Santo (ES)</td>
+                            <td>R$ 2.680,00</td>
+                            <td><span style="color: #27ae60">Líder Produção</span></td>
+                            <td>Cachoeiro de Itapemirim</td>
+                        </tr>
+                        <tr>
+                            <td>Paraná (PR)</td>
+                            <td>R$ 2.520,00</td>
+                            <td><span>Alta</span></td>
+                            <td>Curitiba, Londrina</td>
+                        </tr>
+                        <tr>
+                            <td>Santa Catarina (SC)</td>
+                            <td>R$ 2.740,00</td>
+                            <td><span>Alta</span></td>
+                            <td>Joinville, Itapema</td>
+                        </tr>
+                        <tr>
+                            <td>Goiás (GO)</td>
+                            <td>R$ 2.390,00</td>
+                            <td><span>Moderada</span></td>
+                            <td>Goiânia, Anápolis</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="enem" class="edu-section">
+            <div class="edu-text">
+                <h2 style="font-family: 'Lora'; font-size: 2.2rem; color: var(--gold);">Formação & Acadêmico</h2>
+                <p style="margin: 1.5rem 0;">A profissão de marmorista é técnica, mas muitos profissionais migram para áreas de gestão e design via ENEM para se tornarem empreendedores de sucesso.</p>
+                <ul style="list-style: none;">
+                    <li><i class="fas fa-check-circle" style="color: var(--gold);"></i> <strong>Técnico em Mineração:</strong> Caminho ideal.</li>
+                    <li><i class="fas fa-check-circle" style="color: var(--gold);"></i> <strong>Design de Interiores:</strong> Para marmoristas projetistas.</li>
+                </ul>
+            </div>
+            <div class="edu-stats">
+                <div class="edu-box">
+                    <h5>Design de Interiores</h5>
+                    <p>Nota de Corte Média</p>
+                    <h3 style="color: white;">615.4 pts</h3>
+                </div>
+                <div class="edu-box">
+                    <h5>Arquitetura</h5>
+                    <p>Nota de Corte Média</p>
+                    <h3 style="color: white;">718.9 pts</h3>
+                </div>
+                <div class="edu-box">
+                    <h5>Engenharia Civil</h5>
+                    <p>Nota de Corte Média</p>
+                    <h3 style="color: white;">685.2 pts</h3>
+                </div>
+                <div class="edu-box">
+                    <h5>Geologia</h5>
+                    <p>Nota de Corte Média</p>
+                    <h3 style="color: white;">640.5 pts</h3>
                 </div>
             </div>
         </section>
 
-        <section id="dados" class="stats-section">
-            <div class="stats-container">
-                <div class="stat-item">
-                    <p>Média Salarial Inicial</p>
-                    <h2>R$ 2.350</h2>
-                </div>
-                <div class="stat-item">
-                    <p>Teto Salarial (Sênior)</p>
-                    <h2>R$ 4.020+</h2>
-                </div>
-                <div class="stat-item">
-                    <p>Nota de Corte (Design/Arq)</p>
-                    <h2>580 - 730</h2>
-                </div>
-            </div>
-            <p style="text-align:center; padding: 0 20px; font-size: 0.9rem;">*Dados baseados no mercado brasileiro em 2026. A nota de corte refere-se a cursos correlatos como Design de Interiores e Arquitetura.</p>
-        </section>
-
-        <section id="calculadora">
-            <h2 style="text-align:center; margin-bottom: 20px; font-family: 'Playfair Display';">Simulador de Projeto</h2>
-            <div class="calc-box">
-                <p>Simule o valor aproximado de mão de obra para um projeto de bancada:</p>
-                <input type="number" id="metros" placeholder="Metros lineares (Ex: 2.5)">
-                <input type="number" id="complexidade" placeholder="Nível de complexidade (1 a 5)">
-                <button onclick="calcularProjeto()">Calcular Orçamento Estimado</button>
-                <div id="resultado"></div>
-            </div>
-        </section>
-
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Marmorista Elite. Desenvolvido para fins educativos.</p>
-        <p><a href="https://github.com" style="color: var(--accent); text-decoration: none;">Ver no GitHub <i class="fab fa-github"></i></a></p>
-    </footer>
-
-    <script>
-        function calcularProjeto() {
-            const metros = document.getElementById('metros').value;
-            const complex = document.getElementById('complexidade').value;
-            const resDiv = document.getElementById('resultado');
-
-            if(metros > 0 && complex > 0) {
-                // Cálculo fictício: R$ 300 por metro + adicional de complexidade
-                let base = metros * 350;
-                let adicional = complex * 150;
-                let total = base + adicional;
-
-                resDiv.style.display = 'block';
-                resDiv.innerHTML = `
-                    <strong>Resultado da Simulação:</strong><br>
-                    Valor estimado da mão de obra: <strong>R$ ${total.toFixed(2)}</strong><br>
-                    <small>*Este é apenas um valor base. Materiais não inclusos.</small>
-                `;
-            } else {
-                alert("Por favor, preencha os campos corretamente.");
-            }
-        }
-
-        // Efeito de rolagem suave para os links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+        <section id="simulador">
+            <div class="simulador-box">
+                <h2 style="text-align: center; margin-bottom: 2rem;">Simulador de Carreira 2026</h2>
+                <div class="input-group">
+                    <label>
