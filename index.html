@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marmorista Profissional | Carreira e Arte</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #d4af37; /* Dourado Mármore */
+            --light: #f4f4f4;
+            --white: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--primary);
+            background-color: var(--light);
+            scroll-behavior: smooth;
+        }
+
+        /* Header & Nav */
+        header {
+            background: var(--white);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow);
+        }
+
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--primary); }
+        .logo span { color: var(--accent); }
+
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { text-decoration: none; color: var(--primary); font-weight: 600; transition: 0.3s; }
+        nav ul li a:hover { color: var(--accent); }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+            padding: 0 20px;
+            margin-top: 60px;
+        }
+
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; max-width: 700px; }
+
+        /* Container Principal */
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+
+        /* Cards de Informação */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            border-top: 5px solid var(--accent);
+        }
+
+        .card:hover { transform: translateY(-10px); }
+        .card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 15px; }
+        .card h3 { margin-bottom: 15px; }
+
+        /* Seção de Dados (Salário e ENEM) */
+        .stats-section {
+            background: var(--primary);
+            color: var(--white);
+            padding: 60px 0;
+            border-radius: 20px;
+            margin: 50px 0;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .stat-item { padding: 20px; }
+        .stat-item h2 { font-size: 2.5rem; color: var(--accent); }
+
+        /* Calculadora Interativa */
+        .calc-box {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-top: 30px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background: var(--accent);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        button:hover { background: #b8962d; }
+
+        #resultado {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e8f4fd;
+            border-radius: 5px;
+            display: none;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: #888;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            header { flex-direction: column; }
+            nav ul { margin-top: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">MARMORISTA<span>ELITE</span></div>
+        <nav>
+            <ul>
+                <li><a href="#carreira">Carreira</a></li>
+                <li><a href="#dados">Mercado</a></li>
+                <li><a href="#calculadora">Simulador</a></li>
+                <li><a href="https://github.com" target="_blank">GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>A Arte em Pedras Naturais</h1>
+        <p>Conheça a profissão que transforma mármore, granito e pedras ornamentais em peças exclusivas de arquitetura e design.</p>
+    </section>
+
+    <div class="container">
+        
+        <section id="carreira">
+            <h2 style="text-align:center; margin-bottom: 40px; font-family: 'Playfair Display';">A Profissão Marmorista</h2>
+            <div class="info-grid">
+                <div class="card">
+                    <i class="fas fa-cut"></i>
+                    <h3>Funções Principais</h3>
+                    <p>Corte, polimento, acabamento e instalação de pedras. O marmorista interpreta desenhos técnicos para criar pias, escadas e bancadas perfeitas.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-hard-hat"></i>
+                    <h3>Habilidades</h3>
+                    <p>Exige precisão milimétrica, conhecimento de materiais químicos (resinas e abrasivos) e manuseio de ferramentas pesadas.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-drafting-pencil"></i>
+                    <h3>Campo de Atuação</h3>
+                    <p>Indústrias de construção civil, marmorarias especializadas, design de interiores e restauração de patrimônios históricos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="dados" class="stats-section">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <p>Média Salarial Inicial</p>
+                    <h2>R$ 2.350</h2>
+                </div>
+                <div class="stat-item">
+                    <p>Teto Salarial (Sênior)</p>
+                    <h2>R$ 4.020+</h2>
+                </div>
+                <div class="stat-item">
+                    <p>Nota de Corte (Design/Arq)</p>
+                    <h2>580 - 730</h2>
+                </div>
+            </div>
+            <p style="text-align:center; padding: 0 20px; font-size: 0.9rem;">*Dados baseados no mercado brasileiro em 2026. A nota de corte refere-se a cursos correlatos como Design de Interiores e Arquitetura.</p>
+        </section>
+
+        <section id="calculadora">
+            <h2 style="text-align:center; margin-bottom: 20px; font-family: 'Playfair Display';">Simulador de Projeto</h2>
+            <div class="calc-box">
+                <p>Simule o valor aproximado de mão de obra para um projeto de bancada:</p>
+                <input type="number" id="metros" placeholder="Metros lineares (Ex: 2.5)">
+                <input type="number" id="complexidade" placeholder="Nível de complexidade (1 a 5)">
+                <button onclick="calcularProjeto()">Calcular Orçamento Estimado</button>
+                <div id="resultado"></div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Marmorista Elite. Desenvolvido para fins educativos.</p>
+        <p><a href="https://github.com" style="color: var(--accent); text-decoration: none;">Ver no GitHub <i class="fab fa-github"></i></a></p>
+    </footer>
+
+    <script>
+        function calcularProjeto() {
+            const metros = document.getElementById('metros').value;
+            const complex = document.getElementById('complexidade').value;
+            const resDiv = document.getElementById('resultado');
+
+            if(metros > 0 && complex > 0) {
+                // Cálculo fictício: R$ 300 por metro + adicional de complexidade
+                let base = metros * 350;
+                let adicional = complex * 150;
+                let total = base + adicional;
+
+                resDiv.style.display = 'block';
+                resDiv.innerHTML = `
+                    <strong>Resultado da Simulação:</strong><br>
+                    Valor estimado da mão de obra: <strong>R$ ${total.toFixed(2)}</strong><br>
+                    <small>*Este é apenas um valor base. Materiais não inclusos.</small>
+                `;
+            } else {
+                alert("Por favor, preencha os campos corretamente.");
+            }
+        }
+
+        // Efeito de rolagem suave para os links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
